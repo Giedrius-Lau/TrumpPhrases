@@ -1,0 +1,260 @@
+@import "_config.scss";
+@import "_contactPage.scss";
+
+header{
+  position:relative;
+  display: block;
+  background: $white;
+  width: 80%;
+  margin:0 auto;
+  height:60px;
+  max-width:1200px;
+  .logo{
+    position: absolute;
+    top: 15%;
+    left: 15px;
+    font-size:30px;
+    color:white
+    //@include translate(-50%);
+  }
+  .logoImage{
+    width: 60px;
+    background: #fff;
+    z-index: 10;
+    position: absolute;
+    top: -9px;
+  }
+  nav, nav ul, nav ul li{
+    margin: 0;
+    padding: 0;
+  }
+  nav{
+    position: absolute;
+    top: 30%;
+    right: 15px;
+    //@include translate(-50%);
+    ul li{
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 10px;
+      &.last{
+        margin:0;
+      }
+      a {
+        font-size: 19px;
+        line-height: normal;
+        color: #222;
+      }
+    }
+  }
+}
+.jumbotron{
+  background-color: #b4b4b4;
+  margin-top: 20px;
+}
+
+.card-img-top{
+  margin-top: 10%;
+}
+.chuckNorrisForm{
+  width:300px;
+  display:inline-block;
+  margin: 20px;
+
+
+  input{
+    display: block;
+    width: 100%;
+    padding:5px;
+
+  }
+  button{
+    display: block;
+    width: 100%;
+    background:#333;
+    color:white;
+    margin-top:5px;
+    border:0;
+    padding:5px;
+    cursor: pointer;
+  }
+}
+.chuckNorrisList{
+  display: inline-block;
+  width:100%;
+  list-style: none;
+  margin-left: -20px;
+  li{
+    margin:0 auto;
+    background: silver;
+    color:#333;
+    padding:20px 10px 0 30px ;
+    margin:10px;
+    padding:20px 10px 10px 20px;
+    font-size:13px;
+    border-radius:3px;
+  }
+}
+.searchBlock{
+  display:block;
+  text-align: center;
+}
+.suggestionsBlok{
+  width:100%;
+  max-width:1000px;
+  display:inline-block;
+
+
+  .suggstionsList{
+    list-style-type: none;
+    margin-left:-20px;
+    input{
+      text-decoration: none;
+      display: inline-block;
+      background: #232222;
+      padding: 5px 0px;
+      margin: 2px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 2px 4px #999;
+      box-shadow: 0 2px 4px #999;
+      font-size: 10px;
+      color:white;
+      font-weight:600;
+      border:0;
+      @include transition(.1s ease-in-out);
+      cursor: pointer;
+      width: 130px;
+      text-align: center;
+
+      &:hover{
+        box-shadow: 0;
+        color:$red;
+        @include transition(.1s ease-in-out);
+
+      }
+    }
+  }
+}
+
+.searchHeader{
+  text-align:center;
+  display:block;
+}
+.suggestionsHeader{
+  text-align:center;
+}
+.babyPhoto{
+  //width:200px;
+  margin: 0 auto;
+}
+.gifTitle{
+  margin:40px auto;
+  text-align: center;
+}
+.gifSearch{
+  margin:50px auto;
+  width: $containerWidth;
+
+  input{
+    min-width:200px;
+    width:40%;
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    padding: 0 20px;
+    border:0;
+    background: #eee;
+    border-radius: 3px 3px 0 0;
+  }
+  button{
+    min-width:200px;
+    width:40%;
+    display: block;
+    margin: 0 auto;
+    background: #222;
+    color:white;
+    border: 0;
+    padding: 10px 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 10px gray;
+  }
+}
+
+.container1{
+  width: 100%;
+  margin: 20px auto;
+  background: silver;
+
+    div{
+      display: inline-block;
+      margin: 1%;
+      img{
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 1px 10px gray;
+    }
+  }
+}
+
+.TrumpForm{
+  margin:50px auto;
+  width: $containerWidth;
+
+  input{
+    min-width:200px;
+    width:40%;
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    padding: 0 20px;
+    border:0;
+    background: #eee;
+    border-radius: 3px 3px 0 0;
+  }
+  button{
+    min-width:200px;
+    width:40%;
+    display: block;
+    margin: 0 auto;
+    background: #222;
+    color:white;
+    border: 0;
+    padding: 10px 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 10px gray;
+  }
+}
+.TrumpList{
+  li{
+    list-style-type:none;
+    width:50%;
+    margin:10px auto;
+    background: #eeeeef;
+    padding: 15px;
+    box-shadow: 0 2px silver;
+  }
+}
+.homePageButtons{
+  background:#dc3545;
+  padding:5px 20px;
+  margin:20px;
+  color:#222;
+
+}
+.homePageList{
+  list-style-type: circle;
+  margin:20px 0;
+  p{
+    display:inline;
+  }
+}
+
+.display-3{
+  margin-bottom: 50px;
+}
+.jumbotron{
+  background:#ddd;
+  height:700px;
+  width: 80%;
+  margin:30px auto;
+}

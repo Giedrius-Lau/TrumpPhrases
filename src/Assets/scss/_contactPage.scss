@@ -1,0 +1,11 @@
+@import "_config.scss";
+
+.contactContainer{
+  width: $containerWidth;
+  margin: 40px auto;
+  background: silver;
+  padding:40px;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px silver;
+
+}
