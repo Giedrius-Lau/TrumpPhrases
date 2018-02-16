@@ -11,6 +11,7 @@ import Homepage from './components/pages/homePage';
 import Contactpage from './components/pages/contactPage';
 import ApiTest from './components/pages/apiTest';
 import Trump from './components/pages/Trump';
+import CatchWeather from './components/pages/CatchWeather';
 
 //css
 import './Assets/css/default.min.css';
@@ -28,7 +29,7 @@ class App extends Component {
           <Route exact path='/Contactpage' component={Contactpage} />
           <Route exact path='/ApiTest' component={ApiTest} />
           <Route exact path='/Trump' component={Trump} />
-
+          <Route exact path='/Weather' component={CatchWeather} />
         </div>
       </Router>
     );

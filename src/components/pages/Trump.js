@@ -33,14 +33,19 @@ class Trump extends Component {
     handleSubmit = (event) => {
       event.preventDefault();
       var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = `https://api.tronalddump.io/search/quote?query=${this.state.term}`
+      targetUrl = `https://api.tronalddump.io/search/quote?query=${this.state.term}`;
 
-      console.log('function state is : '+this.state.term)
-      console.log(proxyUrl + targetUrl)
+      // console.log('function state is : '+this.state.term)
+      // console.log(proxyUrl + targetUrl)
+
+      var promise = new Promise((resolve, reject) => {
+
+      });
+      
       fetch(proxyUrl + targetUrl)
         .then(results => {
           return results.json();
-          console.log(results.headers)
+          // console.log(results.headers)
         }).then(data => {
           let quotes = data._embedded.quotes.map((i, index) => {
             return(
