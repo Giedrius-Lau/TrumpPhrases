@@ -4,6 +4,7 @@ $lightGrey: #e6e6e6;
 $darkGrey: #333;
 $red: #ff1755;
 $containerWidth: 80%;
+$border: 1px solid red;
 
 @mixin translate($e) {
   -webkit-transform: translate($e);

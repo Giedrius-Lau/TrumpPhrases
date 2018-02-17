@@ -13,7 +13,7 @@ header{
   background: $white;
   width: 80%;
   margin:0 auto;
-  height:60px;
+  height:7vh;
   max-width:1200px;
   .logo{
     position: absolute;
@@ -263,4 +263,47 @@ header{
   height:700px;
   width: 80%;
   margin:30px auto;
+}
+.weatherApp{
+  background: #F2F1EF;
+  color: #6C7A89;
+  height:93vh;
+  width:100vw;
+}
+.weatherButtons{
+  width: 70vh;
+  display: inline-block;
+  border: $border;
+  position: relative;
+  top:0;
+  button{
+  }
+}
+.weatherForm{
+  width: 30vh;
+  display: inline-block;
+  border: $border;
+  input{
+    min-width:200px;
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    padding: 0 20px;
+    border:0;
+    background: #eee;
+    border-radius: 3px 3px 0 0;
+  }
+  button{
+    min-width:200px;
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    background: #222;
+    color:white;
+    border: 0;
+    padding: 10px 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 10px gray;
+  }
 }
