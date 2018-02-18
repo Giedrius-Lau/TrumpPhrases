@@ -1,13 +1,45 @@
 import React, {Component} from 'react';
 import DisplaySuggestions from './displaySuggestions';
 import WeatherMessage from './weathermessage';
-//import SimpleMap from './../mapComponent/map';
+import SimpleMap from './../mapComponent/map';
 import GoogleMapReact from 'google-map-react';
 
 const axios = require('axios');
 var $ = require('jquery');
 
-//import TrumpApi from './../api/TrumpApi';
+// const AnyReactComponent = ({text}) => <div>{text}</div>;
+//
+// class SimpleMap extends Component {
+//
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       center: {
+//         lat: props.lat,
+//         lng: props.long
+//       },
+//       zoom: 12
+//
+//     }
+//   }
+//   static defaultProps = {
+//     center: {
+//       lat: 59.95,
+//       lng: 30.33
+//     },
+//     zoom: 12
+//   };
+//   render() {
+//     console.log('MAP Component state: ',this.state.center)
+//     return (
+//       <GoogleMapReact bootstrapURLKeys={{key: 'AIzaSyBlfbw45vPnP31tcI17YMIc92NInBqf6XI'}} defaultCenter={this.state.center} defaultZoom={this.state.zoom}>
+//
+//         {/* <AnyReactComponent lat={this.props.lat} lng={this.props.long} text={'Kreyser Avrora'} /> */}
+//
+//       </GoogleMapReact>
+//     );
+//   }
+// }
 
 class CatchWeather extends Component {
   constructor() {
@@ -18,8 +50,8 @@ class CatchWeather extends Component {
       header: 'Search for a city',
       isLoading: false,
       dailyWeather: [],
-      lat: '',
-      long: ''
+      lat: 54.8985207,
+      long: 23.9035965
     };
   }
   onChange = (event) => {
@@ -49,14 +81,11 @@ class CatchWeather extends Component {
       var weatherUrl = `https://api.darksky.net/forecast/052e6d70c203846bb952f6d81f70772c/${lat},${long}`
       var header = response.data.results[0].formatted_address;
       console.log(response.data.results[0]);
-      console.log(lat, long);
+      console.log('Parent state before request: ',this.state.lat);
+      //console.log(lat, long);
       $('.formInput').val("");
-      this.setState({
-        header: header,
-        lat: lat,
-        long: long
-      })
-
+      this.setState({header: header, lat: lat, long: long})
+      console.log('Parent state after request: ',this.state.lat);
       var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       return axios.get(proxyUrl + weatherUrl);
     }).then((response) => {
@@ -118,49 +147,33 @@ class CatchWeather extends Component {
       }
     }
 
-    return (
-      <div className="weatherApp">
-        <div className="searchBlock">
-          <form className="weatherForm" onSubmit={this.fetchWeather}>
-            <input placeholder="Enter city" className="formInput" onChange={this.onChange}/>
-            <button className="formButton">Search!</button>
-          </form>
-          <div className="weatherButtons">
-            <button value="kaunas" onClick={this.handleClick}>Kaunas</button>
-            <button value="vilnius" onClick={this.handleClick}>Vilnius</button>
-            <button value="klaipeda" onClick={this.handleClick}>Klaipėda</button>
-            <button value="london" onClick={this.handleClick}>London</button>
-            <button value="Panevezys" onClick={this.handleClick}>Panevežys</button>
-          </div>
+    return (<div className="weatherApp">
+      <div className="searchBlock">
+        <form className="weatherForm" onSubmit={this.fetchWeather}>
+          <input placeholder="Enter city" className="formInput" onChange={this.onChange}/>
+          <button className="formButton">Search!</button>
+        </form>
+        <div className="weatherButtons">
+          <button value="kaunas" onClick={this.handleClick}>Kaunas</button>
+          <button value="vilnius" onClick={this.handleClick}>Vilnius</button>
+          <button value="klaipeda" onClick={this.handleClick}>Klaipėda</button>
+          <button value="london" onClick={this.handleClick}>London</button>
+          <button value="Panevezys" onClick={this.handleClick}>Panevežys</button>
         </div>
+      </div>
       <hr/>
       <h3 className="searchHeader">{this.state.header}</h3>
       <hr/> {renderMessage()}
       {renderIcon()}
       <ol className="TrumpList">{this.state.temperature}</ol>
       {this.state.icon}<ul>{this.state.dailyWeather}</ul>
-      <SimpleMap  lat={this.state.lat} long={this.state.long}/>
+
+
+      <SimpleMap lat={this.state.lat} long={this.state.long}/>
     </div>);
   }
-
 }
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {lat: 59.95, lng: 30.33},
-    zoom: 12
-  };
-//center = center: {lat: 59.95, lng: 30.33};
-  render() {
-    return (
-      <GoogleMapReact bootstrapURLKeys={{ key: 'AIzaSyBlfbw45vPnP31tcI17YMIc92NInBqf6XI' }}  defaultCenter={center}  defaultZoom={this.props.zoom}>
 
-        {/* <AnyReactComponent lat={this.props.lat} lng={this.props.long} text={'Kreyser Avrora'} /> */}
-
-      </GoogleMapReact>
-    );
-  }
-}
 
 export default CatchWeather;

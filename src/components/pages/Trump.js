@@ -41,7 +41,7 @@ class Trump extends Component {
       var promise = new Promise((resolve, reject) => {
 
       });
-      
+
       fetch(proxyUrl + targetUrl)
         .then(results => {
           return results.json();
@@ -62,7 +62,6 @@ class Trump extends Component {
           )
         })
       .catch(e => console.log('error', e));
-
     }
 
 
