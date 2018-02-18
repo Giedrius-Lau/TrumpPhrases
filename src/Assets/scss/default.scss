@@ -104,6 +104,7 @@ header{
 .searchBlock{
   display:block;
   text-align: center;
+  padding-top:20px;
 }
 .suggestionsBlok{
   width:100%;
@@ -265,45 +266,155 @@ header{
   margin:30px auto;
 }
 .weatherApp{
-  background: #F2F1EF;
-  color: #6C7A89;
+  background: #fafafa;
+  color: #767676;
   height:93vh;
   width:100vw;
 }
-.weatherButtons{
-  width: 70vh;
-  display: inline-block;
-  border: $border;
+
+
+
+.searchBlockWeather{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px 0;
   position: relative;
-  top:0;
+
+  input{
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+    border: none;
+    padding-left: 10px;
+    box-shadow: 0 1px 2px 1px silver;
+    border-radius: 1px;
+  }
   button{
+    width: 10%;
+    min-width: 75px;
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    border-radius: 0 1px 1px 0;
+    background: none;
+    cursor: pointer;
+    color: silver;
   }
 }
-.weatherForm{
-  width: 30vh;
-  display: inline-block;
-  border: $border;
-  input{
-    min-width:200px;
-    width:100%;
-    display: block;
-    margin: 0 auto;
-    height: 40px;
-    padding: 0 20px;
-    border:0;
-    background: #eee;
-    border-radius: 3px 3px 0 0;
-  }
+.weatherButtons{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0;
+  position: relative;
+  display: flex;
+
   button{
-    min-width:200px;
-    width:100%;
-    display: block;
-    margin: 0 auto;
-    background: #222;
-    color:white;
+    background: none;
+    color: #767676;
+    padding:3px 15px;
     border: 0;
-    padding: 10px 0;
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 10px gray;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: .2s ease;
+
+    &:hover{
+      background: #9acbd6;
+      border-radius: 1px;
+      color: white;
+    }
+  }
+}
+
+
+.weatherBlock{
+  width: 90%;
+  min-height: 390px;
+  display: block;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 0;
+  position: relative;
+  padding: 20px 16px 24px 16px;
+  box-shadow: 0 1px 2px 1px silver;
+  border-radius: 1px;
+
+  .weatherSearchHeader{
+    font-size: 40px !important;
+    display: inline-block;
+    text-align: left;
+    color: #878787 !important;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .searchHeader{
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #878787 !important;
+    font-size: 20px;
+  }
+}
+.weaatherIcon{
+  margin:0 auto;
+  width:50px;height:50px;
+  display: inline-block;
+  width: 50px;
+}
+
+.dailyList{
+  margin-left: -40px;
+  text-align: left;
+  font-size: 14px;
+  margin-top:40px;
+
+  li{
+    list-style: none;
+    display: inline-block;
+    width: 12.5%;
+    transition: .2s ease;
+    border: 1px solid transparent;
+
+
+    &:hover{
+      border: 1px solid #eee;
+    }
+
+    .hightTemperature{
+      display: inline-block;
+      color: #c33e3e;
+    }
+    .lowTemperature{
+      color: #74a4b3;
+      display: inline-block;
+      margin-left: 10px;
+
+    }
+  }
+}
+.googleMap{
+  float: right;
+  width: 50%;
+  height: 350px;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px 1px silver;
+}
+
+@media (max-width:880px){
+  .googleMap{
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
   }
 }
