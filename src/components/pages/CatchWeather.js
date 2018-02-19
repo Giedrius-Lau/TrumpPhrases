@@ -146,8 +146,9 @@ class CatchWeather extends Component {
         <button value="kaunas" onClick={this.handleClick}>Kaunas</button>
         <button value="vilnius" onClick={this.handleClick}>Vilnius</button>
         <button value="klaipeda" onClick={this.handleClick}>Klaipėda</button>
-        <button value="london" onClick={this.handleClick}>London</button>
         <button value="Panevezys" onClick={this.handleClick}>Panevežys</button>
+        <button value="london" onClick={this.handleClick}>London</button>
+
       </div>
       <div className="weatherBlock">
         <div className="googleMap">
