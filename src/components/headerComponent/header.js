@@ -11,7 +11,7 @@ class Header extends Component {
         <Link to="/">
           <div className="logo"><img alt="" className="logoImage" src="http://wolk.lt/wp-content/uploads/2017/05/untitled-7.png"/></div>
         </Link>
-        <nav>
+        <nav className="navigation">
           <ul>
             <li className="first">
               <Link to="/">Home</Link>
@@ -31,6 +31,10 @@ class Header extends Component {
 
           </ul>
         </nav>
+
+
+
+
       </header>
     );
   }
