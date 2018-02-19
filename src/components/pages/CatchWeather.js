@@ -19,8 +19,9 @@ class CatchWeather extends Component {
            lng: 23.9035965
          }
     };
-    this.fetchWeather();
-
+    setTimeout(() => {
+      this.fetchWeather();
+    });
   }
 
   onChange = (event) => {
@@ -55,7 +56,6 @@ class CatchWeather extends Component {
     var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.term}`;
 
     axios.get(geocodeUrl).then((response) => {
-      var error;
       if (response.data.status === 'ZERO_RESULTS') {
         if(!$('.error').length){
           $('.weatherForm').append('<div class="error">Unable to find that address</div>');
