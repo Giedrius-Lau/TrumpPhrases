@@ -104,8 +104,8 @@ class CatchWeather extends Component {
       return (<li key={index}>
           <p>{month}-{day}</p>
           {renderIcon()}
-          <p className="hightTemperature">{lowTemperature}<span>&#8451;</span></p>
-          <p className="lowTemperature">{highTemperature}<span>&#8451;</span></p>
+          <p className="hightTemperature">{lowTemperature}<span className="celciusSmall">°C</span></p>
+          <p className="lowTemperature">{highTemperature}<span className="celciusSmall">°C</span></p>
         </li>)
     });
 
@@ -113,7 +113,7 @@ class CatchWeather extends Component {
     var currentlyTemperature = Math.round((response.data.currently.temperature - 32) * 5 / 9);
     //var apparentTemperature = Math.round((response.data.currently.apparentTemperature - 32) * 5 / 9);
     var icon = response.data.currently.icon;
-    let temperature = <span className="weatherSearchHeader">{currentlyTemperature}<span>&#8451;</span> </span>
+    let temperature = <span className="weatherSearchHeader">{currentlyTemperature}<span className="celcius">°C</span> </span>
     let currentTime = {year,month,day}
     this.setState({
       isLoading: false,
