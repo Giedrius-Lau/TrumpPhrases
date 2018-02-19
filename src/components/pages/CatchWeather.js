@@ -19,7 +19,10 @@ class CatchWeather extends Component {
            lng: 23.9035965
          }
     };
+    this.fetchWeather();
+
   }
+
   onChange = (event) => {
     this.setState({
       term: event.target.value
@@ -112,7 +115,7 @@ class CatchWeather extends Component {
 
   render() {
     var {isLoading, icon} = this.state;
-    
+
     function renderMessage() {
       if (isLoading) {
         return <img alt="spinningWheel" src='https://www.drupal.org/files/issues/throbber_13.gif' className="spinningWheel"/>;
