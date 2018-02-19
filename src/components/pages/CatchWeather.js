@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import DisplaySuggestions from './displaySuggestions';
-import WeatherMessage from './weathermessage';
 import SimpleMap from './../mapComponent/map';
-import GoogleMapReact from 'google-map-react';
 const axios = require('axios');
 var $ = require('jquery');
 
@@ -47,7 +44,6 @@ class CatchWeather extends Component {
        dailyWeather: ''
      });
 
-    var encodedComponent = encodeURIComponent();
     var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.term}`;
 
     axios.get(geocodeUrl).then((response) => {
@@ -78,7 +74,7 @@ class CatchWeather extends Component {
     let dailyWeather = response.data.daily.data.map((i, index) => {
       var lowTemperature = Math.round((i.temperatureHigh - 32) * 5 / 9);
       var highTemperature = Math.round((i.temperatureLow - 32) * 5 / 9);
-      var date = new Date(i.time*1000); var day = date.getDate(); var month = date.getMonth(); var year = date.getUTCFullYear();
+      var date = new Date(i.time*1000); var day = date.getDate(); var month = date.getMonth();
       return (<li key={index}>
           <p>{month}-{day}</p>
           <p className="hightTemperature">{lowTemperature}</p>
@@ -89,7 +85,7 @@ class CatchWeather extends Component {
 
     var date = new Date(response.data.currently.time*1000); var day = date.getDate(); var month = date.getMonth(); var year = date.getUTCFullYear();
     var currentlyTemperature = Math.round((response.data.currently.temperature - 32) * 5 / 9);
-    var apparentTemperature = Math.round((response.data.currently.apparentTemperature - 32) * 5 / 9);
+    //var apparentTemperature = Math.round((response.data.currently.apparentTemperature - 32) * 5 / 9);
     var icon = response.data.currently.icon;
     let temperature = <span className="weatherSearchHeader">{currentlyTemperature}<span>&#8451;</span> </span>
     let currentTime = {year,month,day}
@@ -111,11 +107,11 @@ class CatchWeather extends Component {
   }
 
   render() {
-    var {isLoading, temperature, icon, center} = this.state;
+    var {isLoading, icon} = this.state;
 
     function renderMessage() {
       if (isLoading) {
-        return <img src='https://www.drupal.org/files/issues/throbber_13.gif' className="spinningWheel"/>;
+        return <img alt="spinningWheel" src='https://www.drupal.org/files/issues/throbber_13.gif' className="spinningWheel"/>;
       }
     }
 
@@ -138,9 +134,7 @@ class CatchWeather extends Component {
         return <img src="https://image.ibb.co/gnUJO7/sleet.png" alt="fog" border="0" className="weaatherIcon"/>;
       }
     }
-    // setTimeout(() => {
-    //   $('.formButton').click();
-    // }, 400);
+
     return (<div className="weatherApp">
       <div className="searchBlockWeather">
         <form className="weatherForm" onSubmit={this.fetchWeather}>

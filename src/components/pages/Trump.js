@@ -38,9 +38,9 @@ class Trump extends Component {
       // console.log('function state is : '+this.state.term)
       // console.log(proxyUrl + targetUrl)
 
-      var promise = new Promise((resolve, reject) => {
-
-      });
+      // var promise = new Promise((resolve, reject) => {
+      //
+      // });
 
       fetch(proxyUrl + targetUrl)
         .then(results => {

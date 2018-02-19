@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CatchWeather from './../pages/CatchWeather';
 
 class DisplaySuggestions extends Component {
 
@@ -19,7 +18,7 @@ class DisplaySuggestions extends Component {
     })
     return (
       <div className="suggestionsBlok">
-        <p className="suggestionsHeader">Here are some suggestions for your search (please doublepress on suggestion)</p>
+        <p className="suggestionsHeader">Here are some suggestions for your search <b>(please doublepress on suggestion)</b></p>
         <ul className="suggstionsList">
           {suggestionsList}
         </ul>

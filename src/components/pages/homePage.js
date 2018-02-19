@@ -14,6 +14,10 @@ class Homepage extends Component {
                   <h3>This page was created for fun, and learning purpose only.</h3>
                   <ul>
                     <li className="homePageList">
+                      <p>Find your city weather:</p>
+                      <Link className="homePageButtons" to="/Weather">Weather</Link>
+                    </li>
+                    <li className="homePageList">
                       <p>You can search for gif's by the phrase you entered here:</p>
                       <Link className="homePageButtons" to="/ApiTest">GifTest</Link>
                     </li>

@@ -149,6 +149,9 @@ header{
 }
 .suggestionsHeader{
   text-align:center;
+  b{
+    color: red;
+  }
 }
 .babyPhoto{
   //width:200px;
@@ -381,10 +384,12 @@ header{
   li{
     list-style: none;
     display: inline-block;
-    width: 12.5%;
+    width: 10%;
     transition: .2s ease;
     border: 1px solid transparent;
-
+    margin-right: 2%;
+    text-align: center;
+    font-weight: 600;
 
     &:hover{
       border: 1px solid #eee;
@@ -393,6 +398,7 @@ header{
     .hightTemperature{
       display: inline-block;
       color: #c33e3e;
+      font-weight: 400;
     }
     .lowTemperature{
       color: #74a4b3;
