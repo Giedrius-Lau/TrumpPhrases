@@ -1,2 +1,1 @@
-To run project, write npm run in terminal
-# TrumpPhrases
+To run project, enter npm install in terminal and write npm run to start;

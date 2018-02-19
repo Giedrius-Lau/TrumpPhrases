@@ -77,9 +77,9 @@ class CatchWeather extends Component {
       var date = new Date(i.time*1000); var day = date.getDate(); var month = date.getMonth();
       return (<li key={index}>
           <p>{month}-{day}</p>
-          <p className="hightTemperature">{lowTemperature}</p>
+          <p className="hightTemperature">{lowTemperature}<span>&#8451;</span></p>
 
-          <p className="lowTemperature">{highTemperature}</p>
+          <p className="lowTemperature">{highTemperature}<span>&#8451;</span></p>
         </li>)
     });
 
