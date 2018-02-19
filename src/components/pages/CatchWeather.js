@@ -87,11 +87,23 @@ class CatchWeather extends Component {
     }).then((response) => {
 
     let dailyWeather = response.data.daily.data.map((i, index) => {
+      var icon = i.icon
       var lowTemperature = Math.round((i.temperatureHigh - 32) * 5 / 9);
       var highTemperature = Math.round((i.temperatureLow - 32) * 5 / 9);
       var date = new Date(i.time*1000); var day = date.getDate(); var month = date.getMonth();
+
+      function renderIcon() {if (icon === 'fog' || icon === 'wind') {return <img src="https://image.ibb.co/iBwnGS/fog.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'snow') {return <img src="https://image.ibb.co/dEwMbS/snow.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'clear-night') {return <img src="https://image.ibb.co/n9a3qn/clear_night.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'clear-day') {return <img src="https://image.ibb.co/d8gMbS/clear_day.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'cloudy') {return <img src="https://image.ibb.co/h1ipVn/cloudy.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'partly-cloudy-day') {return <img src="https://image.ibb.co/fiSiqn/partly_cloudy_day.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'partly-cloudy-night') {return <img src="https://image.ibb.co/iTzwAn/partly_cloudy_night.png" alt="fog" border="0" className="weaatherIcons"/>;}
+        else if (icon === 'sleet') {return <img src="https://image.ibb.co/gnUJO7/sleet.png" alt="fog" border="0" className="weaatherIcons"/>;}}
+
       return (<li key={index}>
           <p>{month}-{day}</p>
+          {renderIcon()}
           <p className="hightTemperature">{lowTemperature}<span>&#8451;</span></p>
           <p className="lowTemperature">{highTemperature}<span>&#8451;</span></p>
         </li>)
@@ -135,25 +147,14 @@ class CatchWeather extends Component {
         return <img alt="spinningWheel" src='https://www.drupal.org/files/issues/throbber_13.gif' className="spinningWheel"/>;
       }
     }
-    function renderIcon() {
-      if (icon === 'fog' || icon === 'wind') {
-        return <img src="https://image.ibb.co/iBwnGS/fog.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'snow') {
-        return <img src="https://image.ibb.co/dEwMbS/snow.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'clear-night') {
-        return <img src="https://image.ibb.co/n9a3qn/clear_night.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'clear-day') {
-        return <img src="https://image.ibb.co/d8gMbS/clear_day.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'cloudy') {
-        return <img src="https://image.ibb.co/h1ipVn/cloudy.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'partly-cloudy-day') {
-        return <img src="https://image.ibb.co/fiSiqn/partly_cloudy_day.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'partly-cloudy-night') {
-        return <img src="https://image.ibb.co/iTzwAn/partly_cloudy_night.png" alt="fog" border="0" className="weaatherIcon"/>;
-      } else if (icon === 'sleet') {
-        return <img src="https://image.ibb.co/gnUJO7/sleet.png" alt="fog" border="0" className="weaatherIcon"/>;
-      }
-    }
+    function renderIcon() {if (icon === 'fog' || icon === 'wind') {return <img src="https://image.ibb.co/iBwnGS/fog.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'snow') {return <img src="https://image.ibb.co/dEwMbS/snow.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'clear-night') {return <img src="https://image.ibb.co/n9a3qn/clear_night.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'clear-day') {return <img src="https://image.ibb.co/d8gMbS/clear_day.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'cloudy') {return <img src="https://image.ibb.co/h1ipVn/cloudy.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'partly-cloudy-day') {return <img src="https://image.ibb.co/fiSiqn/partly_cloudy_day.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'partly-cloudy-night') {return <img src="https://image.ibb.co/iTzwAn/partly_cloudy_night.png" alt="fog" border="0" className="weaatherIcon"/>;}
+      else if (icon === 'sleet') {return <img src="https://image.ibb.co/gnUJO7/sleet.png" alt="fog" border="0" className="weaatherIcon"/>;}}
 
     return (<div className="weatherApp">
       <div className="searchBlockWeather">
