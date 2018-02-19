@@ -102,36 +102,75 @@ header{
   }
 }
 .searchBlock{
-  display:block;
-  text-align: center;
-  padding-top:20px;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px 0;
+  position: relative;
+
+  input{
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 5px;
+    border: none;
+    padding-left: 10px;
+    box-shadow: 0 1px 2px 1px silver;
+    border-radius: 1px;
+    margin-bottom: 20px;
+
+    &::placeholder{
+      color: silver;
+      padding-left: 5%;
+    }
+  }
+  button{
+    width: 10%;
+    min-width: 75px;
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    border-radius: 0 1px 1px 0;
+    background: none;
+    cursor: pointer;
+    color: silver;
+  }
 }
 .suggestionsBlok{
-  width:100%;
-  max-width:1000px;
-  display:inline-block;
-
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px 0;
+  position: relative;
 
   .suggstionsList{
     list-style-type: none;
     margin-left:-20px;
+
     input{
       text-decoration: none;
       display: inline-block;
-      background: #232222;
+      background: #eee;
       padding: 5px 0px;
       margin: 2px;
-      border-radius: 3px;
-      -webkit-box-shadow: 0 2px 4px #999;
-      box-shadow: 0 2px 4px #999;
+      border-radius: 1px;
+      // -webkit-box-shadow: 0 2px 4px #999;
+      // box-shadow: 0 2px 4px #999;
       font-size: 10px;
-      color:white;
+      color: #444;
       font-weight:600;
       border:0;
       @include transition(.1s ease-in-out);
       cursor: pointer;
       width: 130px;
       text-align: center;
+      transition: .2 ease;
 
       &:hover{
         box-shadow: 0;
@@ -162,31 +201,42 @@ header{
   text-align: center;
 }
 .gifSearch{
-  margin:50px auto;
-  width: $containerWidth;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px 0;
+  position: relative;
 
   input{
-    min-width:200px;
-    width:40%;
-    display: block;
+    width: 100%;
     margin: 0 auto;
-    height: 60px;
-    padding: 0 20px;
-    border:0;
-    background: #eee;
-    border-radius: 3px 3px 0 0;
+    display: inline-block;
+    padding: 5px;
+    border: none;
+    padding-left: 10px;
+    box-shadow: 0 1px 2px 1px silver;
+    border-radius: 1px;
+
+    &::placeholder{
+      color: silver;
+      padding-left: 5%;
+    }
   }
   button{
-    min-width:200px;
-    width:40%;
-    display: block;
-    margin: 0 auto;
-    background: #222;
-    color:white;
-    border: 0;
-    padding: 10px 0;
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 10px gray;
+    width: 10%;
+    min-width: 75px;
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    border-radius: 0 1px 1px 0;
+    background: none;
+    cursor: pointer;
+    color: silver;
   }
 }
 
@@ -205,39 +255,22 @@ header{
     }
   }
 }
-
-.TrumpForm{
-  margin:50px auto;
-  width: $containerWidth;
-
-  input{
-    min-width:200px;
-    width:40%;
-    display: block;
-    margin: 0 auto;
-    height: 60px;
-    padding: 0 20px;
-    border:0;
-    background: #eee;
-    border-radius: 3px 3px 0 0;
-  }
-  button{
-    min-width:200px;
-    width:40%;
-    display: block;
-    margin: 0 auto;
-    background: #222;
-    color:white;
-    border: 0;
-    padding: 10px 0;
-    border-radius: 0 0 3px 3px;
-    box-shadow: 0 1px 10px gray;
-  }
+.babyPhoto{
+  width: 100%;
 }
+
 .TrumpList{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px 0;
+  position: relative;
+
+
   li{
     list-style-type:none;
-    width:50%;
+    width:90%;
     margin:10px auto;
     background: #eeeeef;
     padding: 15px;
@@ -248,8 +281,14 @@ header{
   background:#dc3545;
   padding:5px 20px;
   margin:20px;
-  color:#222;
+  color: white;
+  transition: .2s ease;
+  border-radius: 2px;
 
+  &:hover{
+    color: black;
+    background: white;
+  }
 }
 .homePageList{
   list-style-type: circle;
@@ -263,16 +302,22 @@ header{
   margin-bottom: 50px;
 }
 .jumbotron{
-  background:#ddd;
+  background:#eee;
   height:700px;
   width: 80%;
   margin:30px auto;
+  box-shadow: 0 2px silver;
+
 }
 .weatherApp{
-  background: #fafafa;
   color: #767676;
   height:93vh;
   width:100vw;
+  background: #93a5cf;
+  background: -moz-linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  background: -webkit-linear-gradient(45deg, #93a5cf 0%,#e4efe9 100%);
+  background: linear-gradient(45deg, #93a5cf 0%,#e4efe9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93a5cf', endColorstr='#e4efe9',GradientType=1 );
 }
 
 
@@ -292,8 +337,12 @@ header{
     padding: 5px;
     border: none;
     padding-left: 10px;
-    box-shadow: 0 1px 2px 1px silver;
+    box-shadow: 0 1px 2px 1px #93a5cf;
     border-radius: 1px;
+
+    &::placeholder{
+      color: silver;
+    }
   }
   button{
     width: 10%;
@@ -319,6 +368,9 @@ header{
   padding: 0;
   position: relative;
   display: flex;
+  background: white;
+  box-shadow: 0 1px 2px 1px #93a5cf;
+
 
   button{
     background: none;
@@ -328,6 +380,8 @@ header{
     flex-grow: 1;
     cursor: pointer;
     transition: .2s ease;
+    border-radius: 1px;
+
 
     &:hover{
       background: #9acbd6;
@@ -347,14 +401,15 @@ header{
   padding: 0;
   position: relative;
   padding: 20px 16px 24px 16px;
-  box-shadow: 0 1px 2px 1px silver;
+  box-shadow: 0 1px 2px 1px #93a5cf;
   border-radius: 1px;
+  background: white;
 
   .weatherSearchHeader{
     font-size: 40px !important;
     display: inline-block;
     text-align: left;
-    color: #878787 !important;
+    color: #93a5cf !important;
     font-size: 20px;
     margin-left: 20px;
     margin-top: 20px;
@@ -401,7 +456,7 @@ header{
       font-weight: 400;
     }
     .lowTemperature{
-      color: #74a4b3;
+      color: #93a5cf;
       display: inline-block;
       margin-left: 10px;
 
