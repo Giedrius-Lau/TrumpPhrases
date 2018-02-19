@@ -55,7 +55,14 @@ class CatchWeather extends Component {
     var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.term}`;
 
     axios.get(geocodeUrl).then((response) => {
+      var error;
       if (response.data.status === 'ZERO_RESULTS') {
+        if(!$('.error').length){
+          $('.weatherForm').append('<div class="error">Unable to find that address</div>');
+        } else if ($('.error').css('display') === "none"){
+          $('.error').show();
+        }
+        $('.weatherForm input').val('');
         throw new Error('Unable to find that address');
       }
 
@@ -103,10 +110,17 @@ class CatchWeather extends Component {
       dailyWeather: dailyWeather,
       currentTime: currentTime
     })
-
+    $('.error').hide();
     }).catch((e) => {
       if (e.code === 'ENOTFOUND') {
         console.log('Unable to connect to API servers');
+      } else if (e.message === "Cannot read property 'geometry' of undefined") {
+        if(!$('.error').length){
+          $('.weatherForm').append('<div class="error">Unable to find that address</div>');
+        } else if ($('.error').css('display') === "none"){
+          $('.error').show();
+        }
+        $('.weatherForm input').val('');
       } else {
         console.log(e.message);
       }
