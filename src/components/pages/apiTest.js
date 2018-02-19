@@ -17,12 +17,12 @@ class ApiTest extends Component{
 
     handleSubmit = (event) => {
       event.preventDefault();
-      var randomNumbers = 0;
-      var randomNumber = function(){
-        randomNumbers = Math.floor((Math.random() * 10)+  Math.floor((Math.random())) * 10);
-
-      }
-      randomNumber();
+      // var randomNumbers = 0;
+      // function randomNumber(){
+      //   randomNumbers = Math.floor((Math.random() * 10)+  Math.floor((Math.random())) * 10);
+      //
+      // }
+      // randomNumber();
       const api_key = 'dc6zaTOxFJmzC';
       const url = `http://api.giphy.com/v1/gifs/search?q=${this.state.term}&api_key=${api_key}`;
       fetch(url)
