@@ -34,8 +34,13 @@ class CatchWeather extends Component {
     }, 100);
   }
 
+
+
   fetchWeather = (event) => {
-    event.preventDefault(event);
+    if (event){
+      event.preventDefault(event);
+
+    }
 
     this.setState({
       isLoading: true,
@@ -78,7 +83,6 @@ class CatchWeather extends Component {
       return (<li key={index}>
           <p>{month}-{day}</p>
           <p className="hightTemperature">{lowTemperature}<span>&#8451;</span></p>
-
           <p className="lowTemperature">{highTemperature}<span>&#8451;</span></p>
         </li>)
     });
@@ -108,13 +112,12 @@ class CatchWeather extends Component {
 
   render() {
     var {isLoading, icon} = this.state;
-
+    
     function renderMessage() {
       if (isLoading) {
         return <img alt="spinningWheel" src='https://www.drupal.org/files/issues/throbber_13.gif' className="spinningWheel"/>;
       }
     }
-
     function renderIcon() {
       if (icon === 'fog' || icon === 'wind') {
         return <img src="https://image.ibb.co/iBwnGS/fog.png" alt="fog" border="0" className="weaatherIcon"/>;
