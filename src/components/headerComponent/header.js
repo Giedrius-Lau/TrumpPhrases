@@ -17,13 +17,13 @@ class Header extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/ApiTest">GifTest</Link>
+              <Link to="/Weather">Weather</Link>
             </li>
             <li>
               <Link to="/Trump">Trump</Link>
             </li>
             <li>
-              <Link to="/Weather">Weather</Link>
+              <Link to="/ApiTest">GifTest</Link>
             </li>
             <li className="last">
               <Link to="/Contactpage">Contact</Link>

@@ -139,6 +139,8 @@ class CatchWeather extends Component {
     });
   }
 
+  
+
   render() {
     var {isLoading, icon} = this.state;
 
